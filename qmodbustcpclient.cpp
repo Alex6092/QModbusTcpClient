@@ -456,7 +456,7 @@ void QModbusTcpClient::forceSingleCoilFC5(quint16 coilAddress, bool value)
 
 void QModbusTcpClient::forceMultipleCoilsFC15(quint16 startAddress, QVector<bool> values)
 {
-    quint32 nbByteToCode = qCeil(values.size() / 8);
+    quint32 nbByteToCode = qCeil((qreal)values.size() / (qreal)8.0);
     if(nbByteToCode > 255)
     {
         qDebug() << "QModbusTcpClient::forceMultipleCoilsFC15 - There is too much values to write ... Operation aborted.";
