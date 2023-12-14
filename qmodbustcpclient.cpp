@@ -12,6 +12,11 @@ ModbusRequest::ModbusRequest(QModbusTcpClient * client, quint16 transactionId)
     this->transactionId = transactionId;
 }
 
+quint16 ModbusRequest::getTransactionId()
+{
+    return this->transactionId;
+}
+
 ModbusRequest::~ModbusRequest() {}
 
 // FC6 :
