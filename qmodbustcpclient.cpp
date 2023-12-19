@@ -213,6 +213,7 @@ void ReadMultipleInputsStatusFC2Request::decodeAndCallback(QVector<unsigned char
                 if(nbBitRead < nbInputs)
                 {
                     values.push_back(QModbusTcpClient::getBit(extractedData[9 + i], j));
+                    nbBitRead++;
                 }
                 else
                 {
