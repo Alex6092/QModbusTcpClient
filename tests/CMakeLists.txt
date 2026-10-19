@@ -1,0 +1,7 @@
+find_package(Qt${SIMPLEMODBUSTCPCLIENT_QT_VERSION} REQUIRED COMPONENTS Test)
+
+add_executable(tst_simplemodbustcpclient tst_simplemodbustcpclient.cpp)
+set_target_properties(tst_simplemodbustcpclient PROPERTIES AUTOMOC ON)
+target_link_libraries(tst_simplemodbustcpclient PRIVATE SimpleModbusTcpClient Qt${SIMPLEMODBUSTCPCLIENT_QT_VERSION}::Test)
+
+add_test(NAME tst_simplemodbustcpclient COMMAND tst_simplemodbustcpclient)
